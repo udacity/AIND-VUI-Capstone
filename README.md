@@ -23,9 +23,16 @@ cd AIND-VUI-Capstone
 
 2. Activate the virtual environment, and switch Keras backend to Tensorflow.  
 	
-	For __Mac/OSX__ or __Linux__:
+	For __Mac/OSX__:
 	```
-	conda env create -f requirements/aind-vui-mac-linux.yml
+	conda env create -f requirements/aind-vui-mac.yml
+	source activate aind-vui
+	KERAS_BACKEND=tensorflow python -c "from keras import backend"
+	```
+
+	For __Linux__:
+	```
+	conda env create -f requirements/aind-vui-linux.yml
 	source activate aind-vui
 	KERAS_BACKEND=tensorflow python -c "from keras import backend"
 	```
@@ -40,7 +47,7 @@ cd AIND-VUI-Capstone
 
 3. If you have access to a local GPU, follow [Tensorflow's instructions](https://www.tensorflow.org/install/) for installing Tensorflow with GPU support.
 
-4. If you are using __Windows__, please obtain a couple of additional requirements:
+4. Obtain a few additional requirements:
 	- [librosa](https://librosa.github.io/librosa/)==0.5.1
 	- [soundfile](https://pysoundfile.readthedocs.io/en/0.9.0/)==0.9.0.post1
 	- [python-speech-features](https://github.com/jameslyons/python_speech_features)==0.5
