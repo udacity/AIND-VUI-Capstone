@@ -193,7 +193,7 @@ dependencies:
   - jupyter-client==5.0.0
   - jupyter-console==5.1.0
   - jupyter-core==4.3.0
-  - keras==2.0.0
+  - keras==2.0.4
   - opencv-python==3.2.0.6
   - prompt-toolkit==1.0.13
   - protobuf==3.2.0
