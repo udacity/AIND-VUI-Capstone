@@ -28,11 +28,11 @@ source activate aind-vui
 ```
 
 3. Install TensorFlow.
-	- Option 1: *To install TensorFlow with GPU support*, follow [the guide](https://www.tensorflow.org/install/) to install the necessary NVIDIA software on your system.  If you are using the Udacity AMI, you can skip this step and only need to install the `tensorflow-gpu` package:
+	- Option 1: __To install TensorFlow with GPU support__, follow [the guide](https://www.tensorflow.org/install/) to install the necessary NVIDIA software on your system.  If you are using the Udacity AMI, you can skip this step and only need to install the `tensorflow-gpu` package:
 		```
 		pip install tensorflow-gpu==1.1.0
 		```
-	- Option 2: *To install TensorFlow with CPU support only*,
+	- Option 2: __To install TensorFlow with CPU support only__,
 		```
 		pip install tensorflow==1.1.0
 		```
@@ -43,20 +43,20 @@ pip install -r requirements.txt
 ```
 
 5. Switch [Keras backend](https://keras.io/backend/) to TensorFlow.
-	- *Linux* or *Mac*: 
+	- __Linux__ or __Mac__: 
 		```
 		KERAS_BACKEND=tensorflow python -c "from keras import backend"
 		```
-	- *Windows*: 
+	- __Windows__: 
 		```
 		set KERAS_BACKEND=tensorflow
 		python -c "from keras import backend"
 		```
 
 6. Obtain the [libav](https://libav.org/download/) package.
-	- *Linux*: `sudo apt-get install libav-tools`
-	- *Mac*: `brew install libav`
-	- *Windows*: Instructions coming soon :)
+	- __Linux__: `sudo apt-get install libav-tools`
+	- __Mac__: `brew install libav`
+	- __Windows__: Instructions coming soon :)
 
 7. Obtain the appropriate subsets of the LibriSpeech dataset, and convert all flac files to wav format.
 ```
