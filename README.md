@@ -1,6 +1,7 @@
 [//]: # (Image References)
 
 [image1]: ./images/pipeline.png "ASR Pipeline"
+[image2]: ./images/select_kernel.png "select aind-vui kernel"
 
 ## Project Overview
 
@@ -26,12 +27,12 @@ conda create --name aind-vui python=3.6 numpy
 source activate aind-vui
 ```
 
-3. Install [TensorFlow](https://www.tensorflow.org/install/).
-	- To install TensorFlow with GPU support,
+3. Install TensorFlow.
+	- Option 1: *To install TensorFlow with GPU support*, follow [the guide](https://www.tensorflow.org/install/) to install the necessary NVIDIA software on your system.  If you are using the Udacity AMI, you can skip this step and only need to install the `tensorflow-gpu` package:
 		```
 		pip install tensorflow-gpu==1.1.0
 		```
-	- To install Tensorflow with CPU support only,
+	- Option 2: *To install TensorFlow with CPU support only*,
 		```
 		pip install tensorflow==1.1.0
 		```
@@ -41,21 +42,21 @@ source activate aind-vui
 pip install -r requirements.txt
 ```
 
-5. Switch Keras backend to Tensorflow.
-	- Linux or Mac: 
+5. Switch [Keras backend](https://keras.io/backend/) to TensorFlow.
+	- *Linux* or *Mac*: 
 		```
 		KERAS_BACKEND=tensorflow python -c "from keras import backend"
 		```
-	- Windows: 
+	- *Windows*: 
 		```
 		set KERAS_BACKEND=tensorflow
 		python -c "from keras import backend"
 		```
 
 6. Obtain the [libav](https://libav.org/download/) package.
-	- Linux: `sudo apt-get install libav-tools`
-	- Mac: `brew install libav`
-	- Windows: Instructions coming soon :)
+	- *Linux*: `sudo apt-get install libav-tools`
+	- *Mac*: `brew install libav`
+	- *Windows*: Instructions coming soon :)
 
 7. Obtain the appropriate subsets of the LibriSpeech dataset, and convert all flac files to wav format.
 ```
@@ -75,22 +76,20 @@ python create_desc_json.py LibriSpeech/dev-clean/ train_corpus.json
 python create_desc_json.py LibriSpeech/test-clean/ valid_corpus.json
 ```
 
-9. Create an [IPython kernel](http://ipython.readthedocs.io/en/stable/install/kernel_install.html) for the `aind-vui` environment.
+9. Create an [IPython kernel](http://ipython.readthedocs.io/en/stable/install/kernel_install.html) for the `aind-vui` environment.  Open the notebook.
 ```
 python -m ipykernel install --user --name aind-vui --display-name "aind-vui"
-```
-
-10. Open the notebook.
-```
 jupyter notebook vui_notebook.ipynb
 ```
+
+10. Before running code, change the kernel to match the `aind-vui` environment by using the drop-down menu.  Then, follow the instructions in the notebook.
+
+![select aind-vui kernel][image2]
 
 __NOTE:__ While some code has already been implemented to get you started, you will need to implement additional functionality to successfully answer all of the questions included in the notebook. __Unless requested, do not modify code that has already been included.__
 
 
 ### Amazon Web Services
-
-You are **STRONGLY** encouraged to train the models in the notebook on a GPU.  If you have access to a local GPU, follow [Tensorflow's instructions](https://www.tensorflow.org/install/) for installing Tensorflow with GPU support.
 
 If you do not have access to a local GPU, you could use Amazon Web Services to launch an EC2 GPU instance.  Please refer to the [Udacity instructions](https://classroom.udacity.com/nanodegrees/nd889/parts/16cf5df5-73f0-4afa-93a9-de5974257236/modules/53b2a19e-4e29-4ae7-aaf2-33d195dbdeba/lessons/2df3b94c-4f09-476a-8397-e8841b147f84/project) for setting up a GPU instance for this project.
 
