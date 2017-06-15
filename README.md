@@ -15,47 +15,49 @@ We begin by investigating the [LibriSpeech dataset](http://www.openslr.org/12/) 
 ### Getting Started
 
 1. Clone the repository, and navigate to the downloaded folder.
-
 ```
 git clone https://github.com/udacity/AIND-VUI-Capstone.git
 cd AIND-VUI-Capstone
 ```
 
-2. Activate the virtual environment, and switch Keras backend to Tensorflow.  
-	
-	For __Mac/OSX__:
-	```
-	conda env create -f requirements/aind-vui-mac.yml
-	source activate aind-vui
-	KERAS_BACKEND=tensorflow python -c "from keras import backend"
-	```
+2. Create (and activate) a new environment with Python 3.6 and the `numpy` package.
+```
+conda create --name aind-vui python=3.6 numpy
+source activate aind-vui
+```
 
-	For __Linux__:
-	```
-	conda env create -f requirements/aind-vui-linux.yml
-	source activate aind-vui
-	KERAS_BACKEND=tensorflow python -c "from keras import backend"
-	```
+3. Install [TensorFlow](https://www.tensorflow.org/install/).
+	- To install TensorFlow with GPU support,
+		```
+		pip install tensorflow-gpu==1.1.0
+		```
+	- To install Tensorflow with CPU support only,
+		```
+		pip install tensorflow==1.1.0
+		```
 
-	For __Windows__:
-	```
-	conda env create -f requirements/aind-vui-windows.yml
-	activate aind-vui
-	set KERAS_BACKEND=tensorflow
-	python -c "from keras import backend"
-	```
+4. Install a few pip packages.
+```
+pip install -r requirements.txt
+```
 
-3. If you have access to a local GPU, follow [Tensorflow's instructions](https://www.tensorflow.org/install/) for installing Tensorflow with GPU support.
+5. Switch Keras backend to Tensorflow.
+	- Linux or Mac: 
+		```
+		KERAS_BACKEND=tensorflow python -c "from keras import backend"
+		```
+	- Windows: 
+		```
+		set KERAS_BACKEND=tensorflow
+		python -c "from keras import backend"
+		```
 
-4. Obtain a few additional requirements:
-	- [librosa](https://librosa.github.io/librosa/)==0.5.1
-	- [soundfile](https://pysoundfile.readthedocs.io/en/0.9.0/)==0.9.0.post1
-	- [python-speech-features](https://github.com/jameslyons/python_speech_features)==0.5
-	- [seaborn](https://seaborn.pydata.org/)==0.7.1
-	- [libav](https://libav.org/download/)
+6. Obtain the [libav](https://libav.org/download/) package.
+	- Linux: `sudo apt-get install libav-tools`
+	- Mac: `brew install libav`
+	- Windows: Instructions coming soon :)
 
-5. Obtain the appropriate subsets of the LibriSpeech dataset, and convert all flac files to wav format.
-
+7. Obtain the appropriate subsets of the LibriSpeech dataset, and convert all flac files to wav format.
 ```
 wget http://www.openslr.org/resources/12/dev-clean.tar.gz
 tar -xzvf dev-clean.tar.gz
@@ -66,16 +68,19 @@ cd LibriSpeech
 ./flac_to_wav.sh
 ```
 
-6. Create JSON files corresponding to the train and validation datasets.
-
+8. Create JSON files corresponding to the train and validation datasets.
 ```
 cd ..
 python create_desc_json.py LibriSpeech/dev-clean/ train_corpus.json
 python create_desc_json.py LibriSpeech/test-clean/ valid_corpus.json
 ```
 
-7. Open the notebook.
+9. Create an [IPython kernel](http://ipython.readthedocs.io/en/stable/install/kernel_install.html) for the `aind-vui` environment.
+```
+python -m ipykernel install --user --name aind-vui --display-name "aind-vui"
+```
 
+10. Open the notebook.
 ```
 jupyter notebook vui_notebook.ipynb
 ```
