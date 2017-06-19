@@ -22,20 +22,27 @@ cd AIND-VUI-Capstone
 ```
 
 2. Create (and activate) a new environment with Python 3.6 and the `numpy` package.
-```
-conda create --name aind-vui python=3.6 numpy
-source activate aind-vui
-```
+
+	- __Linux__ or __Mac__: 
+	```
+	conda create --name aind-vui python=3.5 numpy
+	source activate aind-vui
+	```
+	- __Windows__: 
+	```
+	conda create --name aind-vui python=3.5 numpy scipy
+	activate aind-vui
+	```
 
 3. Install TensorFlow.
 	- Option 1: __To install TensorFlow with GPU support__, follow [the guide](https://www.tensorflow.org/install/) to install the necessary NVIDIA software on your system.  If you are using the Udacity AMI, you can skip this step and only need to install the `tensorflow-gpu` package:
-		```
-		pip install tensorflow-gpu==1.1.0
-		```
+	```
+	pip install tensorflow-gpu==1.1.0
+	```
 	- Option 2: __To install TensorFlow with CPU support only__,
-		```
-		pip install tensorflow==1.1.0
-		```
+	```
+	pip install tensorflow==1.1.0
+	```
 
 4. Install a few pip packages.
 ```
