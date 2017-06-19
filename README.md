@@ -22,20 +22,27 @@ cd AIND-VUI-Capstone
 ```
 
 2. Create (and activate) a new environment with Python 3.6 and the `numpy` package.
-```
-conda create --name aind-vui python=3.6 numpy
-source activate aind-vui
-```
+
+	- __Linux__ or __Mac__: 
+	```
+	conda create --name aind-vui python=3.5 numpy
+	source activate aind-vui
+	```
+	- __Windows__: 
+	```
+	conda create --name aind-vui python=3.5 numpy scipy
+	activate aind-vui
+	```
 
 3. Install TensorFlow.
 	- Option 1: __To install TensorFlow with GPU support__, follow [the guide](https://www.tensorflow.org/install/) to install the necessary NVIDIA software on your system.  If you are using the Udacity AMI, you can skip this step and only need to install the `tensorflow-gpu` package:
-		```
-		pip install tensorflow-gpu==1.1.0
-		```
+	```
+	pip install tensorflow-gpu==1.1.0
+	```
 	- Option 2: __To install TensorFlow with CPU support only__,
-		```
-		pip install tensorflow==1.1.0
-		```
+	```
+	pip install tensorflow==1.1.0
+	```
 
 4. Install a few pip packages.
 ```
@@ -44,30 +51,50 @@ pip install -r requirements.txt
 
 5. Switch [Keras backend](https://keras.io/backend/) to TensorFlow.
 	- __Linux__ or __Mac__: 
-		```
-		KERAS_BACKEND=tensorflow python -c "from keras import backend"
-		```
+	```
+	KERAS_BACKEND=tensorflow python -c "from keras import backend"
+	```
 	- __Windows__: 
-		```
-		set KERAS_BACKEND=tensorflow
-		python -c "from keras import backend"
-		```
+	```
+	set KERAS_BACKEND=tensorflow
+	python -c "from keras import backend"
+	```
 
 6. Obtain the `libav` package.
 	- __Linux__: `sudo apt-get install libav-tools`
 	- __Mac__: `brew install libav`
-	- __Windows__: Follow [these instructions](https://libav.org/download/).
+	- __Windows__: Browse to the [Libav website](https://libav.org/download/)
+		- Scroll down to "Windows Nightly and Release Builds and click on the appropriate link for your system (32-bit or 64-bit)
+		- Click `nightly-gpl`
+		- Download most recent archive file
+		- Extract the file.  Move the `usr` directory to your C: drive
+		- Go back to your terminal window from above
+	```
+	rename C:\usr avconv
+    set PATH=C:\avconv\bin;%PATH%
+	```
 
 7. Obtain the appropriate subsets of the LibriSpeech dataset, and convert all flac files to wav format.
-```
-wget http://www.openslr.org/resources/12/dev-clean.tar.gz
-tar -xzvf dev-clean.tar.gz
-wget http://www.openslr.org/resources/12/test-clean.tar.gz
-tar -xzvf test-clean.tar.gz
-mv flac_to_wav.sh LibriSpeech
-cd LibriSpeech
-./flac_to_wav.sh
-```
+	- __Linux__ or __Mac__: 
+		```
+	wget http://www.openslr.org/resources/12/dev-clean.tar.gz
+	tar -xzvf dev-clean.tar.gz
+	wget http://www.openslr.org/resources/12/test-clean.tar.gz
+	tar -xzvf test-clean.tar.gz
+	mv flac_to_wav.sh LibriSpeech
+	cd LibriSpeech
+	./flac_to_wav.sh
+		```
+	- __Windows__: 
+      - Download the following files (via browser) and save in the `AIND-VUI-Capstone` directory.  Extract them with an application that is compatible with `tar` and `gz` such as [7-zip](http://www.7-zip.org/) or [WinZip](http://www.winzip.com/).:
+      http://www.openslr.org/resources/12/dev-clean.tar.gz
+      http://www.openslr.org/resources/12/test-clean.tar.gz
+	 - Convert the files from your terminal window
+	```
+	move flac_to_wav.sh LibriSpeech
+	cd LibriSpeech
+	powershell ./flac_to_wav.sh
+	```
 
 8. Create JSON files corresponding to the train and validation datasets.
 ```
