@@ -88,7 +88,7 @@ pip install -r requirements.txt
 	- __Windows__: Download the following files (via browser) and save in the `AIND-VUI-Capstone` directory.  Extract them with an application that is compatible with `tar` and `gz` such as [7-zip](http://www.7-zip.org/) or [WinZip](http://www.winzip.com/).
 		- http://www.openslr.org/resources/12/dev-clean.tar.gz
 		- http://www.openslr.org/resources/12/test-clean.tar.gz
-	Convert the files from your terminal window
+		- Convert the files from your terminal window:
 		```
 		move flac_to_wav.sh LibriSpeech
 		cd LibriSpeech
