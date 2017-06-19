@@ -76,7 +76,7 @@ pip install -r requirements.txt
 
 7. Obtain the appropriate subsets of the LibriSpeech dataset, and convert all flac files to wav format.
 	- __Linux__ or __Mac__: 
-		```
+	```
 	wget http://www.openslr.org/resources/12/dev-clean.tar.gz
 	tar -xzvf dev-clean.tar.gz
 	wget http://www.openslr.org/resources/12/test-clean.tar.gz
@@ -84,7 +84,7 @@ pip install -r requirements.txt
 	mv flac_to_wav.sh LibriSpeech
 	cd LibriSpeech
 	./flac_to_wav.sh
-		```
+	```
 	- __Windows__: 
       - Download the following files (via browser) and save in the `AIND-VUI-Capstone` directory.  Extract them with an application that is compatible with `tar` and `gz` such as [7-zip](http://www.7-zip.org/) or [WinZip](http://www.winzip.com/).:
       http://www.openslr.org/resources/12/dev-clean.tar.gz
