@@ -64,7 +64,7 @@ pip install -r requirements.txt
 	- __Linux__: `sudo apt-get install libav-tools`
 	- __Mac__: `brew install libav`
 	- __Windows__: Browse to the [Libav website](https://libav.org/download/)
-		- Scroll down to "Windows Nightly and Release Builds and click on the appropriate link for your system (32-bit or 64-bit).
+		- Scroll down to "Windows Nightly and Release Builds" and click on the appropriate link for your system (32-bit or 64-bit).
 		- Click `nightly-gpl`.
 		- Download most recent archive file.
 		- Extract the file.  Move the `usr` directory to your C: drive.
