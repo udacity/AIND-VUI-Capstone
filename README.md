@@ -64,11 +64,11 @@ pip install -r requirements.txt
 	- __Linux__: `sudo apt-get install libav-tools`
 	- __Mac__: `brew install libav`
 	- __Windows__: Browse to the [Libav website](https://libav.org/download/)
-		- Scroll down to "Windows Nightly and Release Builds and click on the appropriate link for your system (32-bit or 64-bit)
-		- Click `nightly-gpl`
-		- Download most recent archive file
-		- Extract the file.  Move the `usr` directory to your C: drive
-		- Go back to your terminal window from above
+		- Scroll down to "Windows Nightly and Release Builds and click on the appropriate link for your system (32-bit or 64-bit).
+		- Click `nightly-gpl`.
+		- Download most recent archive file.
+		- Extract the file.  Move the `usr` directory to your C: drive.
+		- Go back to your terminal window from above.
 	```
 	rename C:\usr avconv
     set PATH=C:\avconv\bin;%PATH%
@@ -85,10 +85,9 @@ pip install -r requirements.txt
 	cd LibriSpeech
 	./flac_to_wav.sh
 	```
-	- __Windows__: 
-		- Download the following files (via browser) and save in the `AIND-VUI-Capstone` directory.  Extract them with an application that is compatible with `tar` and `gz` such as [7-zip](http://www.7-zip.org/) or [WinZip](http://www.winzip.com/).:
-      			- http://www.openslr.org/resources/12/dev-clean.tar.gz
-      			- http://www.openslr.org/resources/12/test-clean.tar.gz
+	- __Windows__: Download the following files (via browser) and save in the `AIND-VUI-Capstone` directory.  Extract them with an application that is compatible with `tar` and `gz` such as [7-zip](http://www.7-zip.org/) or [WinZip](http://www.winzip.com/).:
+	http://www.openslr.org/resources/12/dev-clean.tar.gz
+	http://www.openslr.org/resources/12/test-clean.tar.gz
 		- Convert the files from your terminal window
 		```
 		move flac_to_wav.sh LibriSpeech
