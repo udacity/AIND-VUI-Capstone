@@ -53,10 +53,10 @@ pip install -r requirements.txt
 		python -c "from keras import backend"
 		```
 
-6. Obtain the [libav](https://libav.org/download/) package.
+6. Obtain the `libav` package.
 	- __Linux__: `sudo apt-get install libav-tools`
 	- __Mac__: `brew install libav`
-	- __Windows__: Instructions coming soon :)
+	- __Windows__: Follow [these instructions](https://libav.org/download/).
 
 7. Obtain the appropriate subsets of the LibriSpeech dataset, and convert all flac files to wav format.
 ```
