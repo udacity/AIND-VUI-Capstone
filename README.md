@@ -142,12 +142,6 @@ Alternatively, your submission could consist of the GitHub link to your reposito
 |:---------------------:|:---------------------------------------------------------:| 
 | Submission Files      | The submission includes all required files.		|
 
-#### Documentation
-
-| Criteria       		|     Meets Specifications	        			            | 
-|:---------------------:|:---------------------------------------------------------:| 
-| Comments         		| The submission includes comments that describe the functionality of the code.  	|
-
 #### STEP 2: Model 0: RNN
 
 | Criteria       		|     Meets Specifications	        			            | 
