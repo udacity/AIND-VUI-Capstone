@@ -21,8 +21,12 @@ def main(data_directory, output_file):
     durations = []
     keys = []
     for group in os.listdir(data_directory):
+        if group.startswith('.'):
+            continue
         speaker_path = os.path.join(data_directory, group)
         for speaker in os.listdir(speaker_path):
+            if speaker.startswith('.'):
+                continue
             labels_file = os.path.join(speaker_path, speaker,
                                        '{}-{}.trans.txt'
                                        .format(group, speaker))
