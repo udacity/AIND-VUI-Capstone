@@ -316,7 +316,7 @@ def plot_mfcc_feature(vis_mfcc_feature):
     im = ax.imshow(vis_mfcc_feature, cmap=plt.cm.jet, aspect='auto')
     plt.title('Normalized MFCC')
     plt.ylabel('Time')
-    plt.xlabel('Frequency')
+    plt.xlabel('MFCC Coefficient')
     divider = make_axes_locatable(ax)
     cax = divider.append_axes("right", size="5%", pad=0.05)
     plt.colorbar(im, cax=cax)
