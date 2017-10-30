@@ -13,7 +13,13 @@ We begin by investigating the [LibriSpeech dataset](http://www.openslr.org/12/) 
 
 ## Project Instructions
 
-### Getting Started
+### Amazon Web Services
+
+This project requires GPU acceleration to run efficiently. Please refer to the Udacity instructions for setting up a GPU instance for this project, and refer to the project instructions in the classroom for setup. [link for AIND students](https://classroom.udacity.com/nanodegrees/nd889/parts/16cf5df5-73f0-4afa-93a9-de5974257236/modules/53b2a19e-4e29-4ae7-aaf2-33d195dbdeba/lessons/2df3b94c-4f09-476a-8397-e8841b147f84/project)
+
+### Local Environment Setup
+
+You should run this project with GPU acceleration for best performance.
 
 1. Clone the repository, and navigate to the downloaded folder.
 ```
@@ -115,11 +121,6 @@ jupyter notebook vui_notebook.ipynb
 ![select aind-vui kernel][image2]
 
 __NOTE:__ While some code has already been implemented to get you started, you will need to implement additional functionality to successfully answer all of the questions included in the notebook. __Unless requested, do not modify code that has already been included.__
-
-
-### Amazon Web Services
-
-If you do not have access to a local GPU, you could use Amazon Web Services to launch an EC2 GPU instance.  Please refer to the [Udacity instructions](https://classroom.udacity.com/nanodegrees/nd889/parts/16cf5df5-73f0-4afa-93a9-de5974257236/modules/53b2a19e-4e29-4ae7-aaf2-33d195dbdeba/lessons/2df3b94c-4f09-476a-8397-e8841b147f84/project) for setting up a GPU instance for this project.
 
 
 ### Evaluation
