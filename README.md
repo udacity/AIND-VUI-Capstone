@@ -69,7 +69,16 @@ pip install -r requirements.txt
 To fix it: 
 		- Find the file `keras/utils/generic_utils.py` that you are using for the capstone project. It should be in your environment under `Lib/site-packages` . This may vary, but if using miniconda, for example, it might be located at `C:/Users/username/Miniconda3/envs/aind-vui/Lib/site-packages/keras/utils`.
 		- Copy `generic_utils.py` to `OLDgeneric_utils.py` just in case you need to restore it.
-		- Open the `generic_utils.py` file and change this code line:</br>`marshal.dumps(func.code).decode(‘raw_unicode_escape’)`</br>to this code line:</br>`marshal.dumps(func.code).replace(b’\’,b’/’).decode(‘raw_unicode_escape’)`
+		- Open the `generic_utils.py` file and change this code line:
+		```
+		code = marshal.dumps(func.__code__).decode('raw_unicode_escape')
+		```
+		
+    		to this code line:
+		
+		```
+		code = marshal.dumps(func.__code__).replace(b'\\',b'/').decode('raw_unicode_escape')
+		```
 
 6. Obtain the `libav` package.
 	- __Linux__: `sudo apt-get install libav-tools`
