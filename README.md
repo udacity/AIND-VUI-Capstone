@@ -15,7 +15,35 @@ We begin by investigating the [LibriSpeech dataset](http://www.openslr.org/12/) 
 
 ### Amazon Web Services
 
-This project requires GPU acceleration to run efficiently. Please refer to the Udacity instructions for setting up a GPU instance for this project, and refer to the project instructions in the classroom for setup. [link for AIND students](https://classroom.udacity.com/nanodegrees/nd889/parts/16cf5df5-73f0-4afa-93a9-de5974257236/modules/53b2a19e-4e29-4ae7-aaf2-33d195dbdeba/lessons/2df3b94c-4f09-476a-8397-e8841b147f84/project)
+This project requires GPU acceleration to run efficiently. Please refer to the Udacity instructions for setting up a GPU instance for this project, and refer to the project instructions in the classroom for setup. [link for AIND students](https://classroom.udacity.com/nanodegrees/nd889/parts/4550d1eb-a3e0-4e9b-9d3c-4f55aa6662b5/modules/c8419a1e-acd3-4463-9c01-a4c93f7c3b24/lessons/b27e9b6a-bb3b-4f3e-8993-bdfcb662a426/concepts/61c0743f-22f1-47db-a4d2-5616c25fc888)
+
+1. Follow the Cloud Computing Setup instructions lesson to create an EC2 instance. (The lesson includes all the required package and library installation instructions.)
+
+2. Obtain the appropriate subsets of the LibriSpeech dataset, and convert all flac files to wav format.
+```
+wget http://www.openslr.org/resources/12/dev-clean.tar.gz
+tar -xzvf dev-clean.tar.gz
+wget http://www.openslr.org/resources/12/test-clean.tar.gz
+tar -xzvf test-clean.tar.gz
+mv flac_to_wav.sh LibriSpeech
+cd LibriSpeech
+./flac_to_wav.sh
+```
+
+3. Create JSON files corresponding to the train and validation datasets.
+```
+cd ..
+python create_desc_json.py LibriSpeech/dev-clean/ train_corpus.json
+python create_desc_json.py LibriSpeech/test-clean/ valid_corpus.json
+```
+
+4. Start Jupyter:
+```
+jupyter notebook --ip=0.0.0.0 --no-browser
+```
+
+5. Look at the output in the window, and find the line that looks like: `http://0.0.0.0:8888/?token=3156e...` Copy and paste the **complete** URL into the address bar of a web browser (Firefox, Safari, Chrome, etc). Before navigating to the URL, replace 0.0.0.0 in the URL with the "IPv4 Public IP" address from the EC2 Dashboard.
+
 
 ### Local Environment Setup
 
