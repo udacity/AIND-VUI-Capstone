@@ -100,7 +100,7 @@ To fix it:
 		- Open the `generic_utils.py` file and change this code line:</br>`marshal.dumps(func.code).decode(‘raw_unicode_escape’)`</br>to this code line:</br>`marshal.dumps(func.code).replace(b’\’,b’/’).decode(‘raw_unicode_escape’)`
 
 6. Obtain the `libav` package.
-	- __Linux__: `sudo apt-get install libav-tools`
+	- __Linux__: `sudo apt-get install ffmpeg`
 	- __Mac__: `brew install libav`
 	- __Windows__: Browse to the [Libav website](https://libav.org/download/)
 		- Scroll down to "Windows Nightly and Release Builds" and click on the appropriate link for your system (32-bit or 64-bit).
@@ -114,7 +114,17 @@ To fix it:
 	```
 
 7. Obtain the appropriate subsets of the LibriSpeech dataset, and convert all flac files to wav format.
-	- __Linux__ or __Mac__: 
+	- __Linux__ 
+		```
+	wget http://www.openslr.org/resources/12/dev-clean.tar.gz
+	tar -xzvf dev-clean.tar.gz
+	wget http://www.openslr.org/resources/12/test-clean.tar.gz
+	tar -xzvf test-clean.tar.gz
+	mv flac_to_wav.sh LibriSpeech
+	cd LibriSpeech
+	./flac_to_wav_linux.sh
+	```
+	- __Mac__: 
 	```
 	wget http://www.openslr.org/resources/12/dev-clean.tar.gz
 	tar -xzvf dev-clean.tar.gz
