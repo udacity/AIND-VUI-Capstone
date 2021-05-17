@@ -115,7 +115,7 @@ To fix it:
 
 7. Obtain the appropriate subsets of the LibriSpeech dataset, and convert all flac files to wav format.
 	- __Linux__ 
-		```
+	```
 	wget http://www.openslr.org/resources/12/dev-clean.tar.gz
 	tar -xzvf dev-clean.tar.gz
 	wget http://www.openslr.org/resources/12/test-clean.tar.gz
